@@ -8,13 +8,13 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.composable
 
 @Composable
-fun Navigation(navController: NavHostController){
+fun Navigation(navController: NavHostController, menuItems: List<MenuItemRoom>){
     val context = LocalContext.current
     val startDestination = if (isUserLoggedIn(context)) HomeScreen.route else OnboardingScreen.route
 
     NavHost(navController = navController, startDestination = startDestination){
         composable(Destinations.ONBOARDING){ Onboarding(navController)}
-        composable(Destinations.HOME){ Home()}
+        composable(Destinations.HOME){ Home(menuItems, navController)}
         composable(Destinations.PROFILE){ Profile(navController) }
 
     }

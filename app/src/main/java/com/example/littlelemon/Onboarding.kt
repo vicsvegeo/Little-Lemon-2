@@ -185,11 +185,11 @@ fun Onboarding(navController: NavController) {
             }
             if (success){
                 AlertDialog(
-                    onDismissRequest = { success = false; navController.navigate(ProfileScreen.route) },
+                    onDismissRequest = { success = false; navController.navigate(HomeScreen.route) },
                     title = { Text(text = "Registration Complete!") },
                     text = { Text("You've been successfully registered.") },
                     confirmButton = {
-                        Button(onClick = { navController.navigate(ProfileScreen.route);success = false }) {
+                        Button(onClick = { navController.navigate(HomeScreen.route);success = false }) {
                             Text("OK")
                         }
                     }
